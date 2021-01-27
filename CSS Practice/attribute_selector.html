@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* p[title]{
+            color: orange;
+        } */
+
+        /* p[title=abc]{
+            color: orange;
+        } */
+
+        /* p[title^=abc]{
+            color: orange;
+        } */
+
+        /* p[title$=abc]{
+            color: orange;
+        } */
+
+        p[title*=abc]{
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">1</p>
+    <p title="abcdef">2</p>
+    <p title="helloabc">3</p>
+    <p>4</p>
+</body>
+</html>
