@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <style>
+        body{
+            background-color: #bfa;
+        }
+        .news-frame{
+            width: 298px;
+            height: 287px;
+            background-color: #fefefe;
+            border:1px rgb(73, 40, 40) solid;
+        }
+        .news-frame li:not(:first-child){
+            height: 28px;
+           
+
+        }
+        .news-frame li:not(:first-child) a:hover{
+            color:red;
+            
+        }
+
+        a>img{
+            width: 50%;
+            height: 88px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="news-frame">
+        <li><a href=""><img src="./picture/jd1.webp" alt=""></a></li>
+        <li><a href="">content1</a></li>
+        <li><a href="">content2</a></li>
+        <li><a href="">content3</a></li>
+    </ul>
+</body>
+</html>
