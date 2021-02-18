@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <style>
+        
+        .pic-wrapper{
+            width: 590px;
+            height: 470px;
+            position: relative;
+          
+        }
+        
+        .pic-wrapper a{
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .pic-wrapper a img{
+            width: 590px;
+            height: 470px;
+
+        }
+
+        .items1{
+            z-index: 8;
+        }
+
+        .items2{
+            z-index: 7;
+        }
+
+      .slider{
+        width: 113px;
+        height: 15px;
+        position: absolute;
+        /* left: 20px;
+        top: 440px; */
+        right: 0px;
+        bottom: 0px;
+        z-index: 9;
+          
+      }
+
+      .slider li{
+          width: 8px;
+          height: 8px;
+          color: white;
+          border: 1px white solid;
+          margin-right: 4px;
+          float: left;
+      }
+
+      .slider li:hover{
+          color: black;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="pic-wrapper">
+        <a href="#" class="items1"><img src="./picture/jingdonglunbo/jdlb1.webp" alt=""></a>
+        <a href="#" class="items2"><img src="./picture/jingdonglunbo/jdlb2.webp" alt=""></a>
+        <ul class="slider">
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+            <li>*</li>
+        </ul>
+    </div>
+</body>
+</html>
