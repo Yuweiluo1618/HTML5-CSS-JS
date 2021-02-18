@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <style>
+        .img-list{
+            width: 590px;
+            height: 470px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .img-list li{
+            position: absolute;
+        }
+
+        .img-list li:nth-child(2){
+           z-index: 1;
+        }
+
+        .img-list li a img{
+           width: 590px;
+           height: 470px;
+        }
+
+        .pointer{
+            position: absolute;
+            z-index: 9999;
+            bottom: 20px;
+            left: 30px;
+        }
+
+        .pointer a{
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid transparent;
+            background-clip: content-box;
+            border-radius: 50%;
+            float: left;
+        }
+
+        .pointer a:hover{
+            background-color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <ul class="img-list">
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb1.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb2.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb3.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb4.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb5.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb6.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb7.webp" alt=""></a></li>
+        <li><a href="javascript:;"><img src="./picture/jingdonglunbo/jdlb8.webp" alt=""></a></li>
+        
+        <div class="pointer">
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>
+    </ul>
+</body>
+</html>
