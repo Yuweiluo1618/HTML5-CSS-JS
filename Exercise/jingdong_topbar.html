@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <style>
+        a{
+            color: rgb(153, 153, 153);
+            text-decoration: none;
+        }
+
+        .navi-frame{
+            height: 30px;
+            border-bottom: 1px rgb(221, 221, 221) solid;
+            background-color: rgb(227, 228, 229) ;
+        }
+
+        .navi-frame .navi-bar{
+            font-size: 12px;
+            width: 1190px;
+            margin: 0 auto;
+            line-height: 30px;
+        }
+
+        .navi-bar ul, .navi-bar .navi-right li{
+            float: left;
+        }
+
+       .navi-left span{
+            color: red;
+            margin-right: 5px;
+        }
+
+        .navi-right{
+            margin-left: 500px;
+        }
+
+        .navi-right li{
+            margin-right: 6px;
+        }
+
+        .navi-right li:not(:first-child, :nth-child(2))::before{
+            content: "|";
+            color: rgb(153, 153, 153);
+            margin-right: 5px;
+        }
+        
+        .free a, .purchase a{
+            color: red;
+        }
+
+        .navi-right li span{
+            color:rgb(153, 153, 153);
+            margin-left: 5px;
+            font-size: 10px;
+        }
+
+        .navi-bar a:hover{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navi-frame">
+        <div class="navi-bar">
+            <ul class="navi-left">
+                <li><a href="javascript:;"><span class="fas fa-map-marker-alt"></span>海外</a></li>
+            </ul>
+
+            <ul class="navi-right">
+                <li><a href="">你好，请登录</a></li>
+                <li class="free"><a href="">免费注册</a></li>
+                <li><a href="">我的订单</a></li>
+                <li><a href="">我的京东</a><span class="fas fa-chevron-down"></span></li>
+                <li><a href="">京东会员</a></li>
+                <li class="purchase"><a href="">企业采购</a><span class="fas fa-chevron-down"></span></li>
+                <li><a href="">客户服务</a><span class="fas fa-chevron-down"></span></li>
+                <li><a href="">网站导航</a><span class="fas fa-chevron-down"></span></li>
+                <li><a href="">手机京东</a></li>
+            </ul>
+        
+        </div>
+    </div>
+</body>
+</html>
