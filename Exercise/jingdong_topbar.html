@@ -26,7 +26,7 @@
             line-height: 30px;
         }
 
-        .navi-bar ul, .navi-bar .navi-right li{
+        .navi-bar ul, .navi-right li{
             float: left;
         }
 
@@ -62,6 +62,78 @@
         .navi-bar a:hover{
             color: red;
         }
+        
+        .navi-left li:hover{
+            background-color: #fff;
+            /* border-width: 1px 1px 0;
+            border-color:rgb(221, 221, 221);
+            border-style: solid; */
+        }
+
+        .navi-left li{
+            position: relative;
+        }
+
+        .left-down{
+            position: absolute;
+            width: 300px;
+            height: 442px;
+            background-color: #fff;
+            border: 1px rgb(204, 204, 204) solid;
+            padding: 10px;
+            top: 31px;
+            left: 0;
+        }
+        
+        .ld1 a{
+            width: 40px;
+            height: 24px;
+            display: block;
+            float: left;
+            margin-left: 4px;
+            padding: 0 8px;
+        }
+
+        .ld2{
+            width: 290px;
+            height: 95px;
+            margin: 10px 0 10px 10px;
+            border-top: 1px rgb(204, 204, 204) solid;
+            border-bottom: 1px rgb(204, 204, 204) solid;
+            color: rgb(153, 153, 153);
+            
+        }
+
+        .ld2 a{
+            display: block;
+            width: 120px;
+            height: 25.6px;
+            float: left;
+        }
+
+        .ld3{
+            color:rgb(153, 153, 153);
+            margin: 10px 0 10px 10px;
+        }
+
+        .ld3 p, .ld2 p{
+            height: 24px;
+            margin: 9px 0;
+        }
+
+        .ld3 a{
+            display: block;
+            width: 120px;
+            height: 25.6px;
+            float: left;
+        }
+
+        .clearfix::before,
+        .clearfix::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
 
     </style>
 </head>
@@ -69,7 +141,69 @@
     <div class="navi-frame">
         <div class="navi-bar">
             <ul class="navi-left">
-                <li><a href="javascript:;"><span class="fas fa-map-marker-alt"></span>海外</a></li>
+                <li>
+                    <a href="javascript:;"><span class="fas fa-map-marker-alt"></span>海外</a>
+                    <div class="left-down">
+                        <div class="ld1 clearfix">
+                            <a href="">北京</a>
+                            <a href="">上海</a>
+                            <a href="">天津</a>
+                            <a href="">重庆</a>
+                            <a href="">河北</a>
+
+                            <a href="">山西</a>
+                            <a href="">河南</a>
+                            <a href="">辽宁</a>
+                            <a href="">吉林</a>
+                            <a href="">黑龙江</a>
+
+                            <a href="">内蒙古</a>
+                            <a href="">江苏</a>
+                            <a href="">山东</a>
+                            <a href="">安徽</a>
+                            <a href="">浙江</a>
+
+                            <a href="">福建</a>
+                            <a href="">湖北</a>
+                            <a href="">湖南</a>
+                            <a href="">广东</a>
+                            <a href="">广西</a>
+
+                            <a href="">江西</a>
+                            <a href="">四川</a>
+                            <a href="">海南</a>
+                            <a href="">贵州</a>
+                            <a href="">云南</a>
+
+                            <a href="">西藏</a>
+                            <a href="">陕西</a>
+                            <a href="">甘肃</a>
+                            <a href="">青海</a>
+                            <a href="">宁夏</a>
+
+                            <a href="">新疆</a>
+                            <a href="">港澳</a>
+                            <a href="">台湾</a>
+                            <a href="">钓鱼岛</a>
+                            <a href="">海外</a>
+                        </div>
+                        <div class="ld2 clearfix">
+                            <p>地区专享版本</p>
+                            <a href="">中國港澳</a>
+                            <a href="">中國台灣</a>
+                            <a href="">京东全球</a>
+                        </div>
+                        <div class="ld3 clearfix">
+                            <p>Available Sites</p>
+                            <a href="">Global Site</a>
+                            <a href="">Сайт России</a>
+                            <a href="">Situs Indonesia</a>
+                            <a href="">Sitio de España</a>
+                            <a href="">เว็บไซต์ประเทศไทย</a>
+                        </div>
+                    </div>
+                </li>
+               
             </ul>
 
             <ul class="navi-right">
