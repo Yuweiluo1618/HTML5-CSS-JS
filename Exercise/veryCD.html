@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <link rel="stylesheet" href="./fa/css/all.css">
+    <style>
+        .clearfix::before,
+        .clearfix::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .fas{
+            font-size: 10px;
+        }
+
+        .nav-wrapper{
+            width: 990px;
+            height: 32px; 
+            line-height: 32px;
+            background-color: #f1f1f1;
+            border-bottom: 2px #d6d6d6 solid;
+            margin: 20px auto;
+
+        }
+
+        .lb1 a,
+        .lb2 a,
+        .rb1 a{
+            
+            text-decoration: none;
+            color: #000;
+        }
+
+        .lb1{
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+           
+        }
+
+        .lb1 li{
+            float: left;
+            padding: 0 5px;
+            margin: 0 5px;
+        }
+
+        .lb1 li:hover,
+        .lb2 li:hover,
+        .rb1:hover{
+            background-color: red;
+        }
+
+        .lb1 li:hover a,
+        .lb2 li:hover a,
+        .rb1:hover a{
+            color: rgb(255, 255, 255);
+        }
+
+
+        .lb2{
+            float: left;
+            font-size: 12px;
+        }
+
+        .lb2 li{
+            float: left;
+            padding: 0 3px;
+            margin: 0 2px;
+        }
+
+        .rb1{
+            float: right;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-wrapper clearfix">
+        <ul class="lb1">
+            <li><a href="javascript:;">首页</a></li>
+            <li><a href="javascript:;">剧集</a></li>
+            <li><a href="javascript:;">电影</a></li>
+            <li><a href="javascript:;">美剧</a></li>
+            <li><a href="javascript:;">韩剧</a></li>
+            <li><a href="javascript:;">动漫</a></li>
+            <li><a href="javascript:;">综艺</a></li>
+            <li><a href="javascript:;">少儿</a></li>
+            <li><a href="javascript:;">公开课</a></li>
+        </ul>
+        
+        <ul class="lb2">
+            <li><a href="javascript:;">游戏</a></li>
+            <li><a href="javascript:;">读书</a></li>
+            <li><a href="javascript:;">音乐</a></li>
+            <li><a href="javascript:;">图书</a></li>
+            <li><a href="javascript:;">软件</a></li>
+            <li><a href="javascript:;">资料</a></li>
+            <li><a href="javascript:;">教育</a></li>
+            <li><a href="javascript:;">娱乐</a></li>
+            <li><a href="javascript:;">排片表</a></li>
+            <li><a href="javascript:;">驴榜</a></li>
+        </ul>
+
+        <div class="rb1">
+            <a href="">更新列表</a>
+            <i class="fas fa-angle-double-right"></i>
+        </div>
+    </div>
+</body>
+</html>
