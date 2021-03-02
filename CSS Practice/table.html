@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 50%;
+            border: 1px black solid;
+            /* border-spacing: 1px; */
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td{
+            border: 1px black solid;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        table tr:nth-child(2n){
+            background-color: #bfa;
+        }
+
+        .box1{
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .box2{
+            margin: 0 auto;
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <table>
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td>住址</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>孙悟空</td>
+            <td>男</td>
+            <td>18</td>
+            <td>花果山</td>
+        </tr>
+    </table>
+</body>
+</html>
