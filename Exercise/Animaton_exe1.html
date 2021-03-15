@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS_reset/reset.CSS">
+    <style>
+        .box{
+            width: 131px;
+            height: 271px;
+            background-image: url("./picture/Animation/bigtap-mitu-queue-big.png");
+            background-position: 0 0;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: steps(3, end);
+        }
+
+        .box:hover{
+            background-position: -396px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
