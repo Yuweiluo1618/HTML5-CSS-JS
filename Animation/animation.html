@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            background-color: #fff;
+            animation-name: test;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: 1;
+            animation-direction: alternate;
+            /* animation-play-state: paused; */
+            animation-delay: 3s;
+            animation-fill-mode: both;
+
+        }
+
+        @keyframes test {
+            from{
+                background-color: orange;
+                margin-left: 0;
+            }
+            
+            to{
+                background-color: red;
+                margin-left: 700px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>
