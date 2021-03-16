@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-image: url("./picture/Animation/trump_run.png");
+            animation-name: trump;
+            animation-duration: 0.5s;
+            animation-timing-function: steps(6);
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes trump {
+            from{
+                background-position: 0 -300px;
+            }
+
+            to{
+                background-position: -600px -300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
