@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        html{
+            perspective: 800px;
+        }
+
+        body{
+            border: 1px solid black;
+        }
+        
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 200px auto;
+            transition: all 2s;
+        }
+
+        body:hover .box1{
+            
+            transform: translateZ(200px);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>
