@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .clock{
+            width: 500px;
+            height: 500px;
+            /* border: 10px solid black; */
+            border-radius: 50%;
+            background-image: url("./picture/clock/bg3.jpg");
+            background-size: cover;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .clock>div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .hour-wrapper{
+            width: 50%;
+            height: 50%;
+            background-color: transparent;
+            animation-name: run;
+            animation-duration: 7200s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+
+        .hour{
+            height: 50%;
+            width: 10px;
+            background-color: black;
+            margin: 0 auto;
+
+        }
+
+        .min-wrapper{
+            width: 75%;
+            height: 75%;
+            background-color: transparent;
+            animation-name: run;
+            animation-duration: 600s;
+             animation-timing-function: steps(60);
+             animation-iteration-count: infinite; 
+        } 
+
+        .min{
+            height: 50%;
+            width: 5px;
+            background-color: black;
+            margin: 0 auto;
+
+        }
+
+        .sec-wrapper{
+            width: 95%;
+            height: 95%;
+            background-color: transparent;
+            animation-name: run;
+            animation-duration: 10s;
+            animation-timing-function: steps(60);
+            animation-iteration-count: infinite;
+        } 
+
+        .sec{
+            height: 50%;
+            width: 3px;
+            background-color: red;
+            margin: 0 auto;
+
+        }
+
+        @keyframes run{
+            from{
+                transform: rotateZ(0deg);
+            }
+
+            to{
+                transform: rotateZ(360deg);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+
+        <div class="min-wrapper">
+            <div class="min"></div>
+        </div>
+
+        <div class="sec-wrapper">
+            <div class="sec"></div>
+        </div>
+    </div>
+</body>
+</html>
