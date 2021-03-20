@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            perspective: 800px;
+        }
+
+        .cube-wrapper{
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 200px;
+            transform-style: preserve-3d;
+            /* transition: all 5s; */
+            animation-name: run;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            
+        }
+
+        .cube-wrapper>div{
+            position: absolute;
+        }
+
+
+        .cube-wrapper img{
+            vertical-align: middle;
+        }
+
+        .p1{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+
+        .p2{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+
+        .p3{
+            transform: rotateY(180deg) translateZ(100px);
+        }
+         
+        .p4{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        .p5{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+
+        .p6{
+            transform: translateZ(100px);
+        }
+
+        .cube-wrapper:hover{
+            transform: rotateY(360deg) rotateZ(360deg);
+        }
+
+        @keyframes run {
+            from{
+                transform: rotateX(0deg) rotateZ(0deg);
+            }
+
+            to{
+                transform: rotateX(360deg) rotateZ(360deg);
+            }
+            
+        }
+        
+      
+
+
+    </style>
+</head>
+<body>
+    <div class="cube-wrapper">
+        <div class="p1"><img src="./picture/Avenger/1.jpg" alt=""></div>
+        <div class="p2"><img src="./picture/Avenger/2.jpg" alt=""></div>
+        <div class="p3"><img src="./picture/Avenger/3.jpg" alt=""></div>
+        <div class="p4"><img src="./picture/Avenger/4.jpg" alt=""></div>
+        <div class="p5"><img src="./picture/Avenger/5.jpg" alt=""></div>
+        <div class="p6"><img src="./picture/Avenger/6.jpg" alt=""></div>
+        
+    </div>
+</body>
+</html>
