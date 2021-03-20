@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 100px auto;
+            transition: all 2s;
+            transform-origin: 0 0;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+
+        .box2 img{
+            vertical-align: top;
+            transition: all 2s;
+        }
+
+        .box2:hover img{
+            transform: scale(1.2);
+        }
+
+        .box1:hover{
+            transform: scale(1.2);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+
+    <div class="box2">
+        <img src="../Exercise/picture/Avenger/6.jpg" alt="">
+    </div>
+</body>
+</html>
