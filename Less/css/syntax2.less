@@ -1,0 +1,37 @@
+.box1{
+    .box2{
+        color: red;
+    }
+    >.box3{
+        color: orange;
+    }
+
+    &:hover{
+        color: yellow;
+    }
+}
+
+.p1{
+    width: 200px;
+    height: 100px;
+}
+
+.p2:extend(.p1){
+    color: red;
+}
+
+.p3{
+    .p1;
+}
+
+.p4(){
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+}
+
+.p5{
+    .p4;
+    color: red;
+    
+}
