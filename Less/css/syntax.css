@@ -1,0 +1,15 @@
+body {
+  background-color: #ff0;
+}
+.box5 {
+  width: 100px;
+  color: #bfa;
+}
+.box6 {
+  width: 100px;
+  background-image: url(".box6/abc");
+}
+div {
+  width: 300px;
+  height: 300px;
+}
