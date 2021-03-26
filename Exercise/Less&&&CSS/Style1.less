@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+@total-width:750;
+
+html{
+    font-size: (100vw/@total-width);
+    background-color:  #eff0f4;
+}
+
+a{
+    text-decoration: none;
+}
+
+.w{
+    width: 693rem;
+    margin: 0 auto;
+}
+
+.top-bar-wrapper:extend(.w){
+    height: 144rem;
+    line-height: 144rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .menu{
+        color: #bdbec0;
+        font-size: 16px;
+    }
+
+    h1 a{
+        color: #000;
+        font-size: 16px;
+    }
+
+    .search{
+        color: #c0c1c4;
+        font-size: 16px;
+    }
+}
+
+
+.banner:extend(.w){
+    img{
+        width: 100%;
+    }
+}
+
+.nav-bar:extend(.w){
+    display: flex;
+    height: 317rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    a{
+        width: 327rem;
+        height: 105rem;
+        line-height: 105rem;
+        text-align: center;
+        color: #fff;
+        border-radius: 10rem;
+    }
+
+    span{
+        padding-left: 20rem;
+        font-size: 14px;
+    }
+
+    i{
+        font-size: 14px;
+    }
+    
+    .item1{
+        background: linear-gradient(to right, #f47866, #f97053);
+    }
+    
+    .item2{
+        background: linear-gradient(to right, #d483fd, #c657ff);
+    }
+    
+    .item3{
+        background: linear-gradient(to right, #fe497c, #ff3971);
+    }
+    
+    .item4{
+        background: linear-gradient(to right, #1bc9fb, #1d92ff);
+    }
+}
+
+
+.course-list:extend(.w){
+    height: 401rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40rem;
+    overflow: hidden;
+   
+    
+    .course-title{
+        display: flex;
+        justify-content: space-between;
+        border-left: 2px solid #5789df;
+        h2{
+            font-size: 14px;
+            padding-left: 10rem;
+        }
+        
+        a{
+            color: #9e9ea0;
+        }
+    }
+
+    .items-list{
+        display: flex;
+        width: 750rem;
+        overflow: auto;
+        .item{
+            box-sizing: border-box;
+            width: 330rem;
+            height: 323rem;
+            padding: 0 22rem;
+            background-color: #fff;
+            border-radius: 10rem;
+            box-shadow: 0 0 10rem rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-right: 24rem;
+
+            .cover-wrapper{
+                width: 284rem;
+                height: 156rem;
+                
+                img{
+                  width: 100%;
+                }
+            }
+
+            h3{
+                font-size: 14px;
+            }
+
+            .user-info{
+                display: flex;
+                align-items: center;
+                
+                .avator{
+                    width:42rem;
+                    height:42rem;
+                    img{
+                        width: 100%;
+                    }
+                
+                }
+
+                h4{
+                    color: #b8b7b7;
+                }
+
+            }
+
+           
+        }
+    }
+}
