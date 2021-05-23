@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //  var btn  = document.getElementById("btn");
+        // alert(btn);
+        window.onload = function(){
+            // var btn  = document.getElementById("btn");
+            // console.log(btn);
+            var body = document.body;
+            var elems = document.documentElement;
+            var all = document.all;
+            var box1 = document.getElementsByClassName("box1");
+            var div = document.querySelector(".box1 div");
+            var divs = document.querySelectorAll(".box1");
+            console.log(divs);
+            
+
+            
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">before changed</button>
+    <div class="box1">
+        <div>innner div</div>
+    </div>
+    <div class="box1">
+        <div>innner div</div>
+    </div>
+    <!-- <script>
+        // console.log(document);
+        var btn  = document.getElementById("btn");
+        // console.log(btn);
+        // btn.innerHTML= "after change";
+        btn.onclick = function(){
+            alert("click me?");
+        }
+        
+        
+    </script> -->
+</body>
+</html>

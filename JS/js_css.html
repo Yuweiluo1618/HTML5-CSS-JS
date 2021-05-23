@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 300px;
+            width: 200px;
+            background-color: red;
+            overflow: auto;
+        }
+
+        .box2{
+            height: 600px;
+            width: 200px;
+            background-color: orange;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementsByClassName("box1")[0];
+            var btn1 = document.getElementById("btn1");
+            btn1.disabled = true;
+            box1.onscroll = function(){
+               if(box1.scrollHeight - box1.scrollTop == box1.clientHeight){
+                   btn1.disabled = false;
+               }
+            }
+            
+            
+            
+        }
+
+        // function getStyle(obj, attri){
+        //     try {
+        //         alert(getComputedStyle(obj, null)[attri]);
+        //     } catch (error) {
+        //         alert(obj.currentStyle[attri]);
+        //     }
+        // }
+    </script>
+
+</head>
+<body>
+    
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+
+    <button id="btn1" >btn1</button>
+</body>
+</html>

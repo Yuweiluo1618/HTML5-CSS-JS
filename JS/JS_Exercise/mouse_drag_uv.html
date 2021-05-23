@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        #box3{
+            width: 100px;
+            height: 100px;
+            background-color: chocolate;
+        }
+
+        .drag{
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var cur_drag = null;
+            var bl;
+            var bt;
+            
+            document.addEventListener("mousedown", function(event){
+                if(event.target.classList.contains("drag")){
+                    cur_drag = event.target;
+                    bl = event.pageX - cur_drag.offsetLeft;
+                    bt = event.pageY- cur_drag.offsetTop;
+                }
+            });
+
+            document.addEventListener("mousemove", function(event){
+                if(cur_drag){
+                    cur_drag.style.left = event.pageX - bl + "px";
+                    cur_drag.style.top = event.pageY - bt + "px";
+                }
+
+            });
+
+            document.addEventListener("mouseup", function(){
+                cur_drag = null;
+            })
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+    <div id="box2" class="drag"></div>
+    <div id="box3" class="drag"></div>
+</body>
+</html>

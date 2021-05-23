@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img-frame{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function(){
+            let img_list = ["./img/1.jpg", "./img/2.jpg", "./img/3.jpg","./img/4.jpg","./img/5.jpg"];
+            let index = 0;
+            let speed = 1000;
+            let img = document.getElementById("img");
+            let btn1 = document.getElementById("btn1");
+            let btn2 = document.getElementById("btn2");
+            let fast = document.getElementById("fast");
+            let slow = document.getElementById("slow");
+            let stop; 
+
+            btn1.addEventListener("click", function(){
+                clearInterval(stop);
+                stop = setInterval(function(){
+                    index++;
+                    if(index > img_list.length-1){
+                        index = 0;
+                    }else if(index < 0){
+                        index = img_list.length-1;
+                    }
+                    img.src = img_list[index];
+                }, speed); 
+            });
+
+            btn2.addEventListener("click", function(){
+                clearInterval(stop);
+            });
+
+            fast.addEventListener("click", function(){
+                if(speed <=100){
+                    return;
+                }
+                speed -= 100;
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <div id="img-frame">
+        <img id="img" src="./img/1.jpg">
+        <button id="btn1">Start</button>
+        <button id="fast">Fast</button>
+        <button id="slow">Slow</button>
+        <button id="btn2">End</button>
+    </div>
+</body>
+</html>

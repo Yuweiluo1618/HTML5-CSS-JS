@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+
+        #box2{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+
+        .addbox{
+            width: 300px;
+            height:300px;
+            background-color: chocolate;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+     
+        window.onload = function(){
+            var current_div;
+            var ol;
+            var ot;
+            var btn1 = document.getElementById("btn1");
+
+            btn1.addEventListener("click", function(){
+                var div = document.createElement("div");
+                div.classList.add("addbox", "drag");
+                document.body.appendChild(div);
+            })
+
+            document.addEventListener("mousedown", function(event){
+                if(event.target.classList.contains("drag")){
+                    current_div = event.target;
+                    ol = event.pageX - event.target.offsetLeft;
+                    ot = event.pageY - event.target.offsetTop;
+                    event.preventDefault();
+                    document.addEventListener("mousemove", drag_Move);
+                    document.addEventListener("mouseup", function(){
+                        document.removeEventListener("mousemove", drag_Move);
+                    });     
+            
+                }
+            });
+
+            function drag_Move(event){
+                current_div.style.left = event.pageX-ol+"px" ;
+                current_div.style.top = event.pageY-ot+"px";
+            }
+
+            function drag_remove(){
+                document.removeEventListener("mousemove", drag_Move);
+                document.removeEventListener("mouseup", drag_remove)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">add a div</button>
+    <div id="box1" class="drag"></div>
+    <div id="box2" class="drag"></div>
+
+</body>
+</html>

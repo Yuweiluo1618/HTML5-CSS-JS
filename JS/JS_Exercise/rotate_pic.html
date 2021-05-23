@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/reset.CSS">
+    <style>
+        #outter{
+            width: 500px;
+            height: 332px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #img-frame{
+            display: flex;
+            position: absolute;
+
+        }
+
+        #dot-frame{
+            display: flex;
+            position: absolute;
+            left: 35%;
+            top: 93%;
+            
+        }
+
+        #dot-frame a{
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            margin: 0 10px;
+            
+        }
+
+        #dot-frame .active{
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            let img_frame = document.getElementById("img-frame");
+            let img_class_list = ["img1", "img2", "img3", "img4", "img5"];
+            let pre_active = "img1";
+            let cur_index = 0;
+            let timer;
+            outter.addEventListener("mouseover", function(event){
+                clearInterval(timer);
+                if(event.target.className == "point"){
+                    document.getElementById(img_class_list[cur_index]).classList.remove("active");
+                    pre_active && document.getElementById(pre_active).classList.remove("active");
+                    switch(event.target.id){
+                        case "img1":
+                            img_frame.style.left = 0+"px";
+                            break;
+                        case "img2":
+                            img_frame.style.left = -500+"px";
+                            break;
+                        case "img3":
+                            img_frame.style.left = -1000+"px";
+                            break;
+                        case "img4":
+                            img_frame.style.left = -1500+"px";
+                            break;
+                        case "img5":
+                            img_frame.style.left = -2000+"px";
+                            break;
+                    }
+                    pre_active = event.target.id;
+                    document.getElementById(event.target.id).classList.add("active");
+                }
+            });
+
+            outter.addEventListener("mouseleave", function(){
+                clearInterval(timer);
+                timer = setInterval(function(){
+                    if(pre_active){
+                        cur_index = img_class_list.indexOf(pre_active);
+                    } 
+                    pre_active = null;
+                    document.getElementById(img_class_list[cur_index]).classList.remove("active");
+                    cur_index++;
+                    if(cur_index > img_class_list.length-1){
+                        cur_index = 0;
+                    }
+                    
+                    switch(img_class_list[cur_index]){
+                            case "img1":
+                                img_frame.style.left = 0+"px";
+                                break;
+                            case "img2":
+                                img_frame.style.left = -500+"px";
+                                break;
+                            case "img3":
+                                img_frame.style.left = -1000+"px";
+                                break;
+                            case "img4":
+                                img_frame.style.left = -1500+"px";
+                                break;
+                            case "img5":
+                                img_frame.style.left = -2000+"px";
+                                break;
+                        }
+                    document.getElementById(img_class_list[cur_index]).classList.add("active");
+                    
+                }, 1000)
+            })
+        });
+
+    </script>
+</head>
+<body>
+    <div id="outter">
+        <ul id="img-frame">
+            <li><img src="./img/1.jpg" ></li>
+            <li><img src="./img/2.jpg" ></li>
+            <li><img src="./img/3.jpg" ></li>
+            <li><img src="./img/4.jpg" ></li>
+            <li><img src="./img/5.jpg" ></li>
+        </ul>
+        <div id="dot-frame">
+            <a id="img1" class="point" href="#"><div></div></a>
+            <a id="img2" class="point" href="#"><div></div></a>
+            <a id="img3" class="point" href="#"><div></div></a>
+            <a id="img4" class="point" href="#"><div></div></a>
+            <a id="img5" class="point" href="#"><div></div></a>
+        </div>
+    </div>
+</body>
+</html>

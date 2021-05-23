@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var stop = setInterval(function(){
+        //     console.log('hi');
+        // }, 1000);
+        var num = 0;
+        setTimeout(function test(){
+            console.log(num);
+            num++;
+            if(num == 10){
+                return;
+            }
+            setTimeout(test, 1000);
+        }, 1000);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

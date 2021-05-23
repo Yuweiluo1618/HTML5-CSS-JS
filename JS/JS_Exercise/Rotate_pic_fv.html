@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/reset.CSS">
+    <style>
+        #outter{
+            width: 520px;
+            height: 333px;
+            background-color: yellowgreen;
+            position: relative;
+            margin: 50px auto;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        #imgList{
+            left: 0;
+            display: flex;
+            position: absolute;
+            transition: left 1s;
+        }
+
+        #imgList li{
+            margin: 0 10px;
+        }
+
+        #navDiv{
+            position: absolute;
+            display: flex;
+            bottom: 15px;
+        }
+
+        #navDiv a{
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            margin: 0 5px;
+            opacity: 0.5;
+        }
+
+        #navDiv a:hover{
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            //Keep point middle
+            let outter = document.getElementById("outter");
+            let all_img = document.getElementsByTagName("img");
+            let imgList = document.getElementById("imgList");
+            let navDiv = document.getElementById("navDiv");
+            let all_a = document.getElementsByTagName("a");
+            let index = 0;
+            let timer;
+            
+            navDiv.style.left = outter.clientWidth/2-navDiv.clientWidth/2+"px";
+            all_a[index].style.backgroundColor = "red";
+
+            for(let i = 0; i < all_a.length; i++) {
+                all_a[i].num = i;
+                all_a[i].addEventListener("mouseover", function(){
+                    clearInterval(timer);
+                    index = this.num;
+                    imgList.style.left = -520*index+"px";
+                    setA();
+                });
+               
+                
+            }
+
+            for(let i = 0; i < all_a.length; i++) {
+                all_a[i].addEventListener("mouseleave", function(){
+                  autoChange();
+                });
+               
+                
+            }
+
+            autoChange();
+
+            function setA(){
+                for(let i = 0; i < all_a.length; i++){
+                    all_a[i].style.backgroundColor = "";
+                }
+                all_a[index].style.backgroundColor = "red";
+            }
+
+            function autoChange(){
+                timer = setInterval(function(){
+                    index++;
+                    index %= all_img.length;
+                    imgList.style.left = -520*index+"px";
+                    setA();
+                    
+                }, 3000);
+            }
+             
+            
+
+
+        });
+    </script>
+</head>
+<body>
+    <div id="outter">
+        <ul id="imgList">
+            <li><img src="./img/1.jpg"></li>
+            <li><img src="./img/2.jpg"></li>
+            <li><img src="./img/3.jpg"></li>
+            <li><img src="./img/4.jpg"></li>
+            <li><img src="./img/5.jpg"></li>
+        </ul>
+        <div id="navDiv">
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color:yellow;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            var box1 =  document.getElementById("box1");
+
+            btn1.addEventListener("click", function(){
+                // box1.classList.add("box2");
+                box1.classList.toggle("box2");
+            })
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1">button</button>
+    <div id="box1" class="box1"></div>
+</body>
+</html>

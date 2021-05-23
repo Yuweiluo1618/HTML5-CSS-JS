@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .b1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        .b2{
+            height: 500px;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function(){
+            let btn1 = document.getElementById("btn1");
+            let box1 = document.getElementById("box1");
+
+            btn1.addEventListener("click", function(){
+                // add_class(box1, "b2");
+                toggle_class(box1, "b2");
+
+            });
+
+            function has_class(obj, cn){
+                var reg = new RegExp("\\b"+cn+"\\b");
+                return reg.test(obj.className);
+            }
+
+            function add_class(obj, cn){
+                if(!has_class(obj, cn)){
+                    obj.className += " "+cn;
+                }
+            }
+
+            function remove_class(obj, cn){
+                var reg = new RegExp(" \\b"+cn+"\\b");
+                obj.className = obj.className.replace(reg, "");
+            }
+
+            function toggle_class(obj, cn){
+                if(has_class(obj, cn)){
+                    remove_class(obj, cn);
+                }else{
+                    add_class(obj, cn);
+                }
+            }
+
+           
+        });
+
+    </script>
+</head>
+<body>
+    <button id="btn1">button</button>
+    <br><br>
+    <div id="box1" class="b1 b2"></div>
+</body>
+</html>

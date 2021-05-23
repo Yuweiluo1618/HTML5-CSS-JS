@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function(){
+        var ul = document.getElementById("ul");
+        var btn1 = document.getElementById("btn1");
+
+        btn1.onclick = function(){
+            var li = document.createElement("li");
+            li.innerHTML = "<a href='javascript:;'>new link</a>";
+            ul.appendChild(li);
+
+        }
+
+        ul.onclick = function(event){
+          
+            if (event.target.tagName === 'A') {
+                alert("TRIGGER");
+            }
+        }
+        
+    }
+</script>
+<body>
+    <ul id="ul">
+        <li><a href="javascript:;">old link</a></li>
+        <li><a href="javascript:;">old link</a></li>
+        <li><a href="javascript:;">old link</a></li>
+    </ul>
+
+    <button id="btn1">add new link</button>
+</body>
+</html>

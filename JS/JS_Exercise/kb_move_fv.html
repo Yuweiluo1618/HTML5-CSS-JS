@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementById("box1"); 
+            var dir = null;
+
+            setInterval(function(){
+                console.log(dir);
+                var speed = 10;
+                switch(dir){
+                    case "ArrowUp":
+                    case "Up":
+                        box1.style.top = box1.offsetTop - speed +"px";
+                        break;
+                    case "ArrowDown":
+                    case "Down":
+                        box1.style.top = box1.offsetTop + speed +"px";
+                        break;
+                    case "ArrowLeft":
+                    case "Left":
+                        box1.style.left = box1.offsetLeft - speed +"px";
+                        break;
+                    case "ArrowRight":
+                    case "Right":
+                        box1.style.left = box1.offsetLeft + speed +"px";
+                        break; 
+                }
+            }, 30);
+
+            document.addEventListener("keydown", function(event){
+                dir = event.key;
+                console.log(dir);
+                
+            });
+
+            document.addEventListener("keyup", function(){
+                dir = null;
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            top: 200px
+        }
+
+        #line{
+            width: 1px;
+            height: 1000px;
+            background-color: black;
+            position: absolute;
+            left: 800px;
+
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            let btn1 = document.getElementById("btn1");
+            let btn2 = document.getElementById("btn2");
+            let btn3 = document.getElementById("btn3");
+            let box1 = document.getElementById("box1");
+            let box2 = document.getElementById("box2");
+
+            btn1.addEventListener("click", function(){
+                move(box1, 800, 10, "left", function(){
+                    move(box1, 300, 5, "top", function(){
+                        move(box1, 500, 1, "width", function(){
+                            move(box1, 300, 1, "height", function(){
+    
+                    
+                                
+                    
+                            }) 
+                    
+                        }) 
+                    
+                    })
+                });  
+         
+            });
+        
+            btn2.addEventListener("click", function(){
+              
+                move(box1, 0, 10);
+            });
+
+            btn3.addEventListener("click", function(){
+               
+                move(box2, 800, 100);
+            });
+
+            
+            function move(obj, target, speed, attr, callback){
+                clearInterval(obj.timer);
+                let current = parseInt(get_attr(obj, attr));
+                    if(current > target){
+                        speed = -speed;
+                    }
+                    obj.timer = setInterval(function(){
+                    let current_left = parseInt(get_attr(obj, attr));
+                    current_left+= speed;
+                    if(current_left < target && speed < 0 || current_left > target && speed > 0){
+                       current_left = target;
+                    }
+                    obj.style[attr] = current_left  + "px";
+                    if(current_left == target){
+                        clearInterval(obj.timer);
+                        callback();
+                    }
+                  
+                },10)
+            }
+
+            function get_attr(obj, attr){
+                return getComputedStyle(obj)[attr];
+            }
+        });
+    </script>
+</head>
+<body>
+    <button id="btn1">Right1</button>
+    <button id="btn2">Left</button>
+    <button id="btn3">Right2</button>
+    <div >
+        <img id= "box1" src="./img/1.jpg" alt="">
+    </div>
+    <div id="box2"></div>
+    <div id="line"></div>
+</body>
+</html>
