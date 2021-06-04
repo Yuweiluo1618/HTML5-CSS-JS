@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1
+        var p1 = new Object();
+        p1.name = "1";
+        p1.age = 1;
+        console.log(p1);
+
+        // 2
+        var p2 = {
+            name: "2",
+            age: 2
+        }
+        console.log(p2);
+
+        //3
+        function createPerson(name, age){
+            var obj = {
+                name: name,
+                age: age
+            };
+            return obj;
+        }
+
+        var p3 = createPerson("3", 3);
+        console.log(p3);
+
+        // 4
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.prototype.setName = function(name){
+            this.name = name;
+        }
+
+        var p4 = new Person("4", 4);
+
+        console.log(p4);
+        console.log(p4 instanceof Person);
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
