@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>24_自定义动画</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+    }
+
+    .div1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 300px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<button id="btn1">逐渐扩大</button>
+<button id="btn2">向右移动</button>
+<button id="btn3">向左移动</button>
+<button id="btn4">停止动画</button>
+
+<div class="div1">
+  爱在西元前，学在尚硅谷
+</div>
+
+<!--
+jQuery动画本质 : 在指定时间内不断改变元素样式值来实现的
+1. animate(): 自定义动画效果的动画
+2. stop(): 停止动画
+
+-->
+<script src="./jQuery.js" type="text/javascript"></script>
+<script type="text/javascript">
+  /*
+   需求：
+   1.逐渐扩大
+     1.宽度扩大
+     2.宽度和高度扩大
+     3.先宽度扩大后高度扩大
+   2.向右移动
+     1.向右移动 固定的200px
+     2.基于当前位置向右移动 200px
+   3.向左移动
+     1.向右移动 固定的200px
+     2.基于当前位置向右移动 200px
+     3.判断红框是否正在移动，如果正在移动的时候点击‘向左’按钮，打印出：‘别闹，正在动呢...’
+   4.停止动画
+     1.停止所有的动画
+     2.停止当前动画，直接开始下一个动画
+     3.停止并结束当前动画，开始下一个动画
+   */
+   var $div1 = $(".div1");
+   $("#btn1").click(function(){
+    // $div1.animate({
+    //                 height: 200,
+    //                 width: 200
+    //               });
+
+    $div1
+    .animate({height: 200})
+    .animate({width: 200})
+
+   });
+
+   $("#btn2").click(function(){
+    $div1.animate({left: 200});
+
+    // $div1.animate({left: "+=200"})
+
+
+   });
+
+   $("#btn3").click(function(){
+    // $div1.animate({left: 0});
+
+    $div1.animate({left: "-=200"}, 3000)
+
+
+   });
+
+   $("#btn4").click(function(){
+
+      $div1.stop();
+
+   });
+
+
+
+</script>
+</body>
+</html>

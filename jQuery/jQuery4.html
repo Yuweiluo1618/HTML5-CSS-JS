@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function(){
+            // $('#div1').css( "background", "red");
+            // $('.box').css('background', 'red');
+            // $('div,span').css("background", 'red');
+            // $('div.box').css('background', 'red');
+
+            // $("*").css({"background" : 'red'});
+
+            // $('div:first').css('background','red');
+            // $('.box:last').css('background', 'red');
+            // $("div:not(.box)").css("background", "red");
+            // $('li:lt(3):gt(0)').css("background", "red");
+            // $('li:contains("box")').css("background", "red");
+            // $('li:hidden')
+            // $('li[title]').css("background", "red");
+            // $("li[title=hello").css("background", "red");
+
+            
+            console.log($('div:first').attr("title"));
+            $('div').attr('name','aaa');
+            $('div').removeAttr('title');
+            $('div').attr('class','bbb');
+            $('div').addClass("ccc");
+            $('div').removeClass("bbb");
+            $('li:last').html();
+            $('li:first').html('dsdsds');
+            $(':text').val();
+            $('text').val('dddd');
+            $("button:first").click(function(){
+                $(":checkbox").prop("checked", "true");
+            });
+            $("button:last").click(function(){
+                $(":checkbox").prop("checked", "false");
+            });
+
+            
+        })
+        
+    </script>
+</head>
+<body>
+</body>
+    <div id="div1" class="box">div1 box</div>
+    <div id="div2" class="box">div2 box</div>
+    <div id="div3">div3</div>
+    <span class="box">span box</span>
+
+    <br>
+    <ul>
+        <li>AAAAA</li>
+        <li title="hello">hello</li>
+        <li class="box">box</li>
+        <li title="hello">hello</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02_多Tab点击切换</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #tab li {
+      float: left;
+      list-style: none;
+      width: 80px;
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #container {
+      position: relative;
+    }
+
+    #content1, #content2, #content3 {
+      width: 300px;
+      height: 100px;
+      padding: 30px;
+      position: absolute;
+      top: 40px;
+      left: 0;
+    }
+
+    #tab1, #content1 {
+      background-color: #ffcc00;
+    }
+
+    #tab2, #content2 {
+      background-color: #ff00cc;
+    }
+
+    #tab3, #content3 {
+      background-color: #00ccff;
+    }
+  </style>
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function(){
+      // var index = 0;
+      // var $li_list = $('#tab>li');
+      // var $container_list = $('#container>div')
+    
+      
+      // $('#tab').click(function(event){
+      //   if(event.target.value != index+1){
+      //     $($container_list[index]).css("display","none");
+      //     $($container_list[event.target.value-1]).css("display","");
+      //     index = event.target.value-1;
+      //   }
+        
+      // });
+      var $container_list = $('#container>div');
+      var curIndex = 0;
+
+      // $('#tab>li').click(function(){
+      //   $container_list.css("display", "none");
+      //   var index = $(this).index();
+      //   $container_list[index].style.display = "";
+      // });
+
+      $('#tab>li').click(function(){
+        $container_list[curIndex].style.display = "none";
+        var index = $(this).index();
+        $container_list[index].style.display = "";
+        curIndex = index;
+      });
+      
+    });
+  </script>
+</head>
+<body>
+<h2>多Tab点击切换</h2>
+
+<ul id="tab">
+  <li id="tab1" value="1">10元套餐</li>
+  <li id="tab2" value="2">30元套餐</li>
+  <li id="tab3" value="3">50元包月</li>
+</ul>
+
+<div id="container">
+  <div id="content1">
+    10元套餐详情：<br/>&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+  </div>
+  <div id="content2" style="display: none">
+    30元套餐详情：<br/>&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+  </div>
+  <div id="content3" style="display: none">
+    50元包月详情：<br/>&nbsp;每月无限量随心打
+  </div>
+</div>
+
+</body>
+</html>

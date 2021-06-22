@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function(){
+            var obj = {
+                name: "zax",
+                age: 18,
+                setName: function(name){
+                    this.name = name;
+                }
+            }
+            $.each(obj, function(index, item){
+                console.log(index, item);
+                
+            });
+
+            console.log($.type($));
+            console.log($.isArray([]));
+            console.log($.isFunction($));
+            var json = '{"name": "Jack", "age": 18}';
+            console.log($.parseJSON(json));
+                        
+
+        });
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

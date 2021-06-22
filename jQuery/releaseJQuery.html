@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>26_多库共存</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+    }
+
+    .div1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 10px;
+      background: red;
+    }
+  </style>
+
+  <script src="./JS/my_lib.js"></script>
+  <script src="./jQuery.js"></script>
+  <script>
+    jQuery.noConflict();
+    $();
+  </script>
+
+</head>
+<body>
+<!--
+问题 : 如果有2个库都有$, 就存在冲突
+解决 : jQuery库可以释放$的使用权, 让另一个库可以正常使用, 此时jQuery库只能使用jQuery了
+API : jQuery.noConflict()
+-->
+</body>
+</html>

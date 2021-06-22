@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        // console.log(jQuery);
+        // console.log(jQuery());
+        $(function(){
+            $("#btn").click(function(){
+                alert($(this).html());
+                $('<input type="text">').appendTo('body');
+            });
+        });
+
+        var arr = [1, 2, 3, 4];
+        $.each(arr, function(index, item){
+           console.log(index, item);
+        });
+
+        var str = '  str  '
+        console.log("----"+$.trim(str)+"----");
+        console.log(str.trim());
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+    <button id="btn">test</button>
+    <input type="text">
+    <input type="text">
+</body>
+</html>

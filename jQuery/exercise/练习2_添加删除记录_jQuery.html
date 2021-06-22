@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>添加删除记录练习</title>
+  <link rel="stylesheet" type="text/css" href="../exercise/css/css.css"/>
+  <script src="../jQuery.js"></script>
+  <script>
+    $(function(){
+      // $("#addEmpButton").click(function (){
+      //     var new_record = "<tr> <td>"+$("#empName").val()+"</td> <td>"+$("#email").val()+"</td> <td>"+$("#salary").val()+"</td> <td><a href='#''>Delete</a></td> </tr>";
+      //     $("#employeeTable").append(new_record);
+      // });
+      // $("#employeeTable").click(function(event){
+      //   if(event.target.tagName === "A"){
+      //     $(event.target).parent().parent().remove();
+      //   }
+
+      // });
+
+      $("#addEmpButton").click(function(){
+        var $empName = $("#empName");
+        var $email = $("#email");
+        var $salary = $("#salary");
+        var empName = $empName.val();
+        var email = $email.val();
+        var salary = $salary.val();
+        $("<tr></tr>").append("<td>"+empName+"</td>").append("<td>"+email+"</td>").append("<td>"+salary+"</td>").append("<td><a href='#'>Delete</a></td>").appendTo("#employeeTable>tbody");
+        $empName.val("");
+        $email.val("");
+        $salary.val("");
+      });
+
+      $("#employeeTable").click(function(event){
+        if(event.target.tagName === "A"){
+          var $tr = $(event.target).parent().parent();
+          if(confirm("Are you sure want to delete "+$tr.children(':first').html()+"?")){
+            $tr.remove();
+          }
+        }
+        
+      });
+
+
+    });
+  </script>
+
+</head>
+<body>
+
+<table id="employeeTable">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Salary</th>
+    <th>&nbsp;</th>
+  </tr>
+  <tr>
+    <td>Tom</td>
+    <td>tom@tom.com</td>
+    <td>5000</td>
+    <td><a href="#">Delete</a></td>
+  </tr>
+  <tr>
+    <td>Jerry</td>
+    <td>jerry@sohu.com</td>
+    <td>8000</td>
+    <td><a href="#">Delete</a></td>
+  </tr>
+  <tr>
+    <td>Bob</td>
+    <td>bob@tom.com</td>
+    <td>10000</td>
+    <td><a href="#">Delete</a></td>
+  </tr>
+
+</table>
+
+<div id="formDiv">
+
+  <h4>添加新员工</h4>
+
+  <table>
+    <tr>
+      <td class="word">name:</td>
+      <td class="inp">
+        <input type="text" name="empName" id="empName"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="word">email:</td>
+      <td class="inp">
+        <input type="text" name="email" id="email"/>
+      </td>
+    </tr>
+    <tr>
+      <td class="word">salary:</td>
+      <td class="inp">
+        <input type="text" name="salary" id="salary"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button id="addEmpButton" value="abc">
+          Submit
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+</html>
