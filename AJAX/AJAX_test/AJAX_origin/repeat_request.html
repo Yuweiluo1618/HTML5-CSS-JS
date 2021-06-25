@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function(){
+            var btn = document.getElementById("button");
+            var is_sending =  false;
+
+            btn.addEventListener("click", function(){
+                if(is_sending){
+                    xhr.abort();
+                }
+                var xhr = new XMLHttpRequest();
+                is_sending = true;
+                xhr.open("GET", "http://127.0.0.1:8000/delay?t="+Date.now());
+                xhr.send();
+                xhr.addEventListener("readystatechange", function(){
+                    if(xhr.readyState === 4){
+                        is_sending = false;
+                    }
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <button id="button">click send AJAX request</button>
+</body>
+</html>

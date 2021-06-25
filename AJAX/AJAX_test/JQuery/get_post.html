@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jQuery.js"></script>
+    <script>
+        $(function(){
+            $("#btn1").click(function(){
+                $.get("http://127.0.0.1:8000/jquery", {a:100, b:200}, function(data){
+                    console.log(data);
+                }, "json");
+            });
+
+            $("#btn2").click(function(){
+                $.post("http://127.0.0.1:8000/jquery", {a:100, b:200}, function(data){
+                    console.log(data);
+                    
+                })
+            });
+
+            $("#btn3").click(function(){
+                $.ajax({
+                    url: "http://127.0.0.1:8000/jquery",
+                    data: {a:100, b:200},
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data){
+                        console.log(data);
+                        
+                    },
+                    error: function(){
+                        console.log('error');
+                        
+                    }
+                })
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="btn1">JQ get</button>
+    <button id="btn2">JQ post</button>
+    <button id="btn3">general</button>
+</body>
+</html>

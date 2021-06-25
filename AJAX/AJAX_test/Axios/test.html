@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            var btns = document.querySelectorAll("button");
+            btns[0].addEventListener("click", function(){
+                axios.get("http://127.0.0.1:8000/axios", {
+                    params: {a:100, b:200},
+                    headers: {name: "hehe"}
+                })
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.error(err);
+                })
+            });
+
+            btns[1].addEventListener("click", function(){
+                axios.post("http://127.0.0.1:8000/axios",{a: 100},{
+                    params:{b:200}
+                })
+                .then(res => {
+                    console.log(res)
+                })
+                .catch(err => {
+                    console.error(err); 
+                })
+            });
+
+            btns[2].addEventListener("click", function(){
+                axios({
+                    method:'post',
+                    url: "http://127.0.0.1:8000/axios",
+                    params:{a: 100},
+                    headers:{name:"jack"},
+                    data: {
+                        id:"http://127.0.0.1:8000/axios"
+                    }
+                })
+                .then(response => {
+                        console.log(response.headers);
+                        
+                        console.log(response.data);
+                        
+                })
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <button>get</button>
+    <button>post</button>
+    <button>general</button>
+</body>
+</html>

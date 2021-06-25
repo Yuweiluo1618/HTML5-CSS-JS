@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+            var button = document.getElementsByTagName("button")[0];
+            var result = document.getElementById("result");
+            button.addEventListener("click", function(){
+                var xhr  =  new XMLHttpRequest();
+                xhr.open("GET", "http://127.0.0.1:8000/server?a=100&b=300");
+                xhr.send();
+                xhr.addEventListener("readystatechange", function(){
+                    if(xhr.readyState === 4){
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            console.log(xhr.status);
+                            console.log(xhr.statusText);
+                            console.log(xhr.getAllResponseHeaders());
+                            console.log(xhr.response);
+                            result.innerHTML = xhr.response;
+                            
+                        }
+                    }
+                });
+                
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>send request by AJAX</button>
+    <div id="result"></div>
+</body>
+</html>

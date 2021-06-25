@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load", function(){
+            var btns = document.querySelectorAll("button");
+            var xhr = null;
+            btns[0].addEventListener("click", function(){
+                xhr = new XMLHttpRequest();
+                xhr.open("GET", "http://127.0.0.1:8000/delay");
+                xhr.send();
+            });
+
+            btns[1].onclick = function(){
+                xhr.abort();
+            }
+        });
+    </script>
+    
+</head>
+<body>
+    <button>send request</button>
+    <button>cancel request</button>
+</body>
+</html>

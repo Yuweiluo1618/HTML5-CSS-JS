@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px red solid;
+        }
+    </style>
+    <script>
+        window.addEventListener("load", function(){
+           var btn = document.querySelector("button");
+           var result = document.getElementById("result");
+           btn.addEventListener("click", function(){
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET","http://127.0.0.1:9000/cros");
+                xhr.send();
+                xhr.addEventListener("readystatechange", function(){
+                    if(xhr.readyState ===  4){
+                        if(xhr.status >= 200 && xhr.status < 300){
+                            result.innerHTML = xhr.response;
+                        }
+                    }
+                });
+           }); 
+        });
+    </script>
+</head>
+<body>
+    <button>click send AJAX</button>
+    <div id="result"></div>
+</body>
+</html>
