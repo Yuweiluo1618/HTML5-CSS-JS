@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const app = {
+            name: "record",
+            content: ["a", "b", "c", "d"],
+            [Symbol.iterator]: function* gen(){
+                let index = 0;
+                // yield app.content[index];
+                // yield app.content[++index];
+                // yield app.content[++index];
+                // yield app.content[++index];
+                // yield 3
+            }
+           
+        }
+
+        for(let v of app){
+            console.log(v);
+            
+        }
+        // console.log(app[Symbol.iterator]);
+        
+    </script>
+</body>
+</html>

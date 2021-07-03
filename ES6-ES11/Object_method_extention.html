@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log(Object.is(NaN, NaN));
+        const info1 = {
+            url: "127.0.0.1",
+            port: "8080",
+            password: "1233"
+
+        }
+
+        const info2 = {
+            url: "www.google.com",
+            port: "7000",
+            username: "admin"
+        }
+
+        // console.log(Object.assign(info1, info2));
+
+        const p1 = {
+            name: "p1"
+        }
+        
+        const p2 = {
+            name: "p1's Prototype"
+        }
+        
+        Object.setPrototypeOf(p1, p2);
+        // console.log(p1);
+
+        console.log(Object.getPrototypeOf(p1));
+         
+        
+    </script>
+</body>
+</html>

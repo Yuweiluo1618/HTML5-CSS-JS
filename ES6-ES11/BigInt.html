@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 999n;
+        console.log(a, typeof a);
+
+        let b = 3;
+        b = BigInt(b);
+        console.log(b, typeof b);
+
+        let max_int = Number.MAX_SAFE_INTEGER;
+        console.log(max_int);
+        console.log(max_int+1);
+        console.log(max_int+2);
+
+        console.log(BigInt(max_int)+BigInt(2));
+        
+        
+        
+        
+        
+        
+    </script>
+</body>
+</html>

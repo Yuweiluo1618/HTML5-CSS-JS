@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* gen(){
+            console.log('one');
+            yield 1;
+            console.log('two');
+            yield 2;
+            console.log('three');
+            yield 3;  
+        }
+        
+        var ite = gen();
+        // console.log(ite);
+        // console.log(ite.next());
+        // console.log(ite.next());
+        // console.log(ite.next());
+        // console.log(ite.next());
+
+        for(let v of ite){
+            console.log(v);
+            
+        }
+        
+        
+
+        
+
+        
+    </script>
+</body>
+</html>

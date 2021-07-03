@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //es5
+        function Cellphone(name, price){
+            this.name = name;
+            this.price = price;
+        }
+
+        Cellphone.prototype.call = function (){
+            console.log("I can call");
+            
+        }
+
+        //es6+
+
+        class Smartphone{
+            
+            constructor(name, price){
+                this.name = name;
+                this.price = price;
+            }
+
+            call(){
+                console.log('I can also call'); 
+            }
+
+        }
+
+        //es5
+        let oldphone = new Cellphone("Nokia", 3000);
+        let phone = new Smartphone("apple", 5999);
+        console.log(oldphone);
+        console.log(phone);
+        
+        
+    </script>
+</body>
+</html>

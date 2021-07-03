@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            #age;
+            #type;
+            constructor(name, age, type){
+                this.name = name;
+                this.#age = age;
+                this.#type = type;
+            }
+
+            info(){
+                console.log(`name: ${this.name} age: ${this.#age} type: ${this.#type}`);
+                
+            }
+        }
+        console.log(Person);
+        
+        const p = new Person("Jack", 17, "1");
+        p.info();
+        // console.log(p);
+        
+    </script>
+</body>
+</html>

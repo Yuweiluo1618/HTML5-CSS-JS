@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function* gen(args){
+            console.log(args);
+            let one = yield 1;
+            console.log(one);
+            let two = yield 2;
+            console.log(two);
+            let three = yield 3;
+            console.log(three);
+        }
+
+        const ite = gen("hi");
+        console.log(ite.next());
+        console.log(ite.next(111));
+        console.log(ite.next(222));
+        console.log(ite.next(333));
+    
+        
+    </script>
+</body>
+</html>

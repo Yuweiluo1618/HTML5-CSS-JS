@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let str = "<a href='127.0.0.1'>hi<a>";
+        // let reg1 = /<a href=(.*)>(.*)<a>/
+        // console.log(reg1.exec(str));
+        
+        let reg1 = /<a href=(?<url>.*)>(?<text>.*)<a>/;
+        let result = reg1.exec(str);
+        // console.log(result);
+        // console.log(result.groups.text);
+        // console.log(result.groups.url);
+
+
+        let str2 = "Js122344acvcvd555zsd";
+        // const reg2 = /\d+(?=z)/
+        // const reg2 = /(?<=d)\d+/
+        // console.log(reg2.exec(str2));
+            
+
+        let str3 = `
+        <ul>
+            <li>
+                <a href="">movie a</a>
+                <p>a</p>
+            </li>
+            <li>
+                <a href="">movie b</a>
+                <p>b</p>
+            </li>
+        </ul>`
+
+        const reg3 = /<li>.*?<a href="">(.*?)<\/a>.*?<p>(.*?)<\/p>/gs;
+        let result3;
+        let arr =[];
+        // let result3 = reg3.exec(str3);
+        // console.log(result3);
+        while(result3 = reg3.exec(str3)){
+            arr.push(result3);
+        }
+        console.log(arr);
+        
+        
+
+
+
+        
+        
+    </script>
+</body>
+</html>

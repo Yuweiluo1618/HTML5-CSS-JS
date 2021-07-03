@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["a", "b", "c", "d"];
+        
+        for(let v of arr[Symbol.iterator]()){
+            console.log(v);
+        }
+
+        for(let v of arr){
+            console.log(v);
+        }
+
+        // for(let i in arr){
+        //     console.log(i);   
+        // }
+
+        // console.log(arr);
+        // let iterator = arr[Symbol.iterator]();
+        // console.log(iterator);
+        
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        // console.log(iterator.next());
+        
+        
+    </script>
+</body>
+</html>

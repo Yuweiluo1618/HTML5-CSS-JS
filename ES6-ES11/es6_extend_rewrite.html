@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Animal{
+            
+            constructor(color, age){
+                this.color = color;
+                this.age = age;
+            }
+
+            walk(){
+                console.log("I can walk");
+                
+            }
+
+        }
+
+        class Dog  extends Animal{
+            
+            constructor(color, age, type){
+                super(color, age);
+                this.type = type;
+            }
+
+            bark(){
+                console.log("wang wang");
+                
+            }
+
+            walk(){
+                super.walk();
+                console.log('I can also run');
+                
+            }
+        }
+
+        const d1 = new Dog("brown", 0.3, "Hasky");
+        d1.walk();
+        console.log(d1);
+        
+    </script>
+</body>
+</html>
