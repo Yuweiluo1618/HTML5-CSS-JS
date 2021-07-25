@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jQuery.js"></script>
+</head>
+<body>
+    <form>
+        username: <input type="text" name="username" id="username"><br><br>
+        password: <input type="password" name="password" id="password"><br><br>
+        <input type="button" value="login" id="btn">
+    </form>
+    <div id="info"></div>
+    <script>
+        $("#btn").click(()=>{
+            let prams = {
+                username: $("#username").val(),
+                password: $("#password").val()
+            }
+            $.ajax({
+                url: "/login_btn",
+                type: "POST",
+                data: JSON.stringify(prams),
+                success: (resp)=>{
+                    $("#info").html(resp);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

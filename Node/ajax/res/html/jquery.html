@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jQuery.js"></script>
+</head>
+<body>
+    <h1>This is jQuery page</h1>
+    <button id="btn">click to send AJAX</button>
+    <div id="info"></div>
+    <script>
+        $("#btn").click(()=>{
+            $.ajax({
+                url: "/btn_click",
+                data: {username:"aaa",
+                       password:"123" 
+                    },
+                success:(resp)=>{
+                    $("#info").html(resp);
+                }
+                
+            })
+        });
+    </script>
+</body>
+</html>

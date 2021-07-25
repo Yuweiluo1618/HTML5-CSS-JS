@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        UserName: <input type="text" name="usename" id="username"><br><br>
+        PassWord: <input type="password" name="password" id="password"><br><br>
+        <input type="button" value="Login" id="btn">
+    </form>
+    <div id="info"></div>
+    <script>
+        let btn = document.getElementById("btn");
+        let info = document.getElementById("info");
+        
+
+
+        btn.addEventListener("click", function(){
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            const prams = {
+                username,
+                password
+            };
+
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/login_btn");
+            xhr.timeout = 2000;
+            
+            xhr.addEventListener("timeout", function(){
+                this.abort();
+            })
+
+            xhr.addEventListener("readystatechange", function(){
+                    if(this.readyState === 4){
+                        if(this.status >= 200 && this.status < 300){
+                            info.innerHTML = this.responseText;
+                        }
+                    }
+            });
+            
+            xhr.send(JSON.stringify(prams)); 
+            
+        });
+
+    </script>
+</body>
+</html>
