@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>我是网站A，登录页面</h1>
+<hr>
+<form method="post">
+    <label>用户名：</label><input type="text" id="username" placeholder="请输入用户名"><br/>
+    <label>密&emsp;码：</label><input type="password" id="password" placeholder="请输入密码"><br/>
+    <input type="button" value="登录"  class="loginBtn">
+</form>
+<script>
+    $(".loginBtn").click(function (e) {
+        console.log("点击了登录按钮");
+
+        //获取参数
+        var username = $("#username").val();
+        var password = $("#password").val();  
+        var params = {
+            "username":username,
+            "password":password,
+        }
+        console.log(params);
+        
+        $.ajax({
+            url:'/',
+            
+            type:'post',
+            data:JSON.stringify(params),
+            contentType:'application/json',
+            headers:{'X-CSRFToken':getCookie('csrf_token')},
+            success: function (resp) {
+                console.log("回调成功了");
+                console.log(resp);
+                
+                alert(`登录成功！`);
+                window.location.href = "/transfer"
+            }
+        })
+        
+    })
+    
+    function getCookie(name) {
+        var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+        return r ? r[1] : undefined;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+Arguments: 
+  C:\dev\nodejs\node.exe C:\dev\nodejs\node_modules\yarn\bin\yarn.js add express;
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Python27\;C:\Python3\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;d:\Microsoft VS Code\bin;C:\Program Files\Calibre2\;C:\Python3\Scripts\;C:\Users\VULCAN\AppData\Local\Microsoft\WindowsApps;C:\dev\nvm;C:\dev\nodejs;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Java\jdk1.8.0_151\bin;D:\Android\Sdk\platform-tools;C:\Python27\;C:\Users\VULCAN\AppData\Local\Yarn\bin;C:\Program Files\Git\cmd;E:\MYSQL\mysql-5.6.41-winx64\bin;C:\Python3\Scripts\;C:\Python3\;C:\Users\VULCAN\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\VULCAN\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: http://registry.npm.taobao.org/express;: Not found
+      at Request.params.callback [as _callback] (C:\dev\nvm\v10.15.0\node_modules\yarn\lib\cli.js:66975:18)
+      at Request.self.callback (C:\dev\nvm\v10.15.0\node_modules\yarn\lib\cli.js:140727:22)
+      at Request.emit (events.js:182:13)
+      at Request.<anonymous> (C:\dev\nvm\v10.15.0\node_modules\yarn\lib\cli.js:141699:10)
+      at Request.emit (events.js:182:13)
+      at IncomingMessage.<anonymous> (C:\dev\nvm\v10.15.0\node_modules\yarn\lib\cli.js:141621:12)
+      at Object.onceWrapper (events.js:273:13)
+      at IncomingMessage.emit (events.js:187:15)
+      at endReadableNT (_stream_readable.js:1094:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "webB",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

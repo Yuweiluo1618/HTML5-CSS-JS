@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>转账</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+<h1>我是网站A，转账页面</h1>
+
+<form>
+    <label>账户：</label><input type="text" id="to_account" placeholder="请输入对方账户"><br/>
+    <label>金额：</label><input type="number" id="money" placeholder="请输入转账金额"><br/>
+    <input type="button" value="转账" class="submitBtn">
+</form>
+<script>
+    $(".submitBtn").click(function (e) {
+        console.log("点击了转账按钮");
+
+        //获取参数
+        var to_account = $("#to_account").val();
+        var money = $("#money").val();  
+        var params = {
+            "to_account":to_account,
+            "money":money,
+        }
+        console.log(params);
+        
+        $.ajax({
+            url:'/transfer',
+            type:'post',
+            data:JSON.stringify(params),
+            contentType:'application/json',
+            headers:{'X-CSRFToken':getCookie('csrf_token')},
+            success: function (resp) {
+                console.log("回调成功了");
+                console.log(resp);
+                
+                alert(`转账${resp.money}元到${resp.to_account}成功！`);
+            }
+        })
+        
+    })
+    
+    function getCookie(name) {
+        var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+        return r ? r[1] : undefined;
+    }
+    </script>
+</body>
+</html>
